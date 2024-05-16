@@ -44,7 +44,7 @@ export default function App() {
   <h1 className={css.title}>Phonebook</h1>
       <ContactForm addContact={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
+      {visibleContacts.length > 0 ? <ContactList contacts={visibleContacts} onDelete={deleteContact} /> : <p>No contact in the phonebook</p>}
     </div>
   )
 
